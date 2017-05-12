@@ -6,3 +6,14 @@ const storeController = require('../controllers/storeController')
 router.get('/', storeController.myMiddleware, storeController.homePage)
 
 module.exports = router
+
+
+/* factorial in recursive manner */
+
+// it's not the part of this course, but 
+// hey, it is still good to know, right?
+
+function factorial (n) {
+  if (n < 2) { return 1}
+  return n * factorial(n-1)
+ }
