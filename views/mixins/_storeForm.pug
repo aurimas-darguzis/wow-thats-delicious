@@ -1,5 +1,7 @@
-mixin storeForm(store => {
-
-  p It works
-}
+mixin storeForm2((store = {}) => {
+    p It works
+  }
 )
+
+mixin storeForm(store = {})
+  p It works!
