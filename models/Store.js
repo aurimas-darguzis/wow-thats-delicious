@@ -22,7 +22,7 @@ const storeSchema = new mongoose.Schema({
 })
 
 // before we save schema, we want to prepopulate slug.
-// so we take the value from name, pass it slug function that 
+// so we take the value from name, pass it slug function that
 // we imported and assign to slug property
 storeSchema.pre('save', function (next) {
   // `this` - is the store that we are trying to save
