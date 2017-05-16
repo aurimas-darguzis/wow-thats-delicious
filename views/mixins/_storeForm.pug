@@ -4,4 +4,6 @@ mixin storeForm2((store = {}) => {
 )
 
 mixin storeForm(store = {})
-  p It works!
+  form(action="/add" method="POST" enctype="multipart/form-data" class="card")
+    label(for="name") Name
+    input(type="text" name="name")
