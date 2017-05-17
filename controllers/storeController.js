@@ -10,7 +10,7 @@ exports.addStore = (req, res) => {
 }
 
 exports.createStore = async (req, res) => {
-  const store = await(new Store(req.body)).save()
+  const store = await (new Store(req.body)).save()
   // show  a message. flash(type of:[success, warning, info], message)
   req.flash('success', `Successfully created ${store.name}. Care to leave a review?`)
   res.redirect(`/store/${store.slug}`)
@@ -39,15 +39,14 @@ exports.updateStore = async (req, res) => {
     new: true, // return the new store instead of the old one
     runValidators: true
   }
-  console.log('hola');
+  console.log('hola')
   const store = await Store.findOneAndUpdate(q, data, options).exec()
   // Redirect them the store and tell them it worked
   req.flash('success', `Successfully updated <strong>${store.name}</strong> 
           <a href="/stores/${store.slug}">View Store</a>`)
-  
+
   res.redirect(`/stores/${store._id}/edit`)
 }
-
 
 exports.deleteStore = async (req, res) => {
   const store = await Store.findOneAndRemove({ _id: req.params.id })
