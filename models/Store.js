@@ -36,7 +36,8 @@ const storeSchema = new mongoose.Schema({
     type: String,
     required: 'You must suplly an address!'
   }
- }
+ },
+ photo: String
 })
 
 // before we save schema, we want to prepopulate slug.
