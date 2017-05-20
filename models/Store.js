@@ -27,17 +27,17 @@ const storeSchema = new mongoose.Schema({
     type: {
       type: String,
       default: 'Point'
-  },
+    },
     coordinates: [{
       type: Number,
       required: 'You must supply coordinates!'
-  }],
-  address: {
-    type: String,
-    required: 'You must suplly an address!'
-  }
- },
- photo: String
+    }],
+    address: {
+      type: String,
+      required: 'You must suplly an address!'
+    }
+  },
+  photo: String
 })
 
 // before we save schema, we want to prepopulate slug.

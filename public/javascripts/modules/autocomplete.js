@@ -1,6 +1,6 @@
 function autocomplete (input, latInput, lngInput) {
   console.log(input, latInput, lngInput)
-  if(!input) {
+  if (!input) {
     return // skip this fn from running if there is not input on the page
   }
   const dropdown = new google.maps.places.Autocomplete(input)
@@ -14,7 +14,7 @@ function autocomplete (input, latInput, lngInput) {
   // if someone hits enter on the address field, dont submit the form
   input.on('keydown', (e) => {
     if (e.keyCode === 13) {
-      e.preventDefault();
+      e.preventDefault()
     }
   })
 }

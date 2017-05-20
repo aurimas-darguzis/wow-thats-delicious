@@ -100,7 +100,6 @@ exports.getStoresByTag = async (req, res) => {
   res.render('tag', { tags, title: 'Tags', tag, stores })
 }
 
-
 // exports.deleteStore = async (req, res) => {
 //   const store = await Store.findOneAndRemove({ _id: req.params.id })
 // }
