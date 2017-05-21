@@ -31,3 +31,4 @@ exports.validateRegister = (req, res, next) => {
   }
   next() // no errors, good to continue
 }
+
