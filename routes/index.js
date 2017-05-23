@@ -34,8 +34,6 @@ router.get('/register', userController.registerForm)
 router.post('/register', 
   userController.validateRegister,
   userController.register
-  
-  
 )
 
 module.exports = router
