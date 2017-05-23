@@ -32,3 +32,7 @@ exports.validateRegister = (req, res, next) => {
   }
   next() // no errors, good to continue
 }
+
+exports.register = async (req, res, next) => {
+  
+}
