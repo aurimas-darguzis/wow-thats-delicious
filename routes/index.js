@@ -32,7 +32,7 @@ router.get('/register', userController.registerForm)
 // 1. Validate the registration data
 // 2. Register the user
 // 3. We need to log them in
-router.post('/register', 
+router.post('/register',
   userController.validateRegister,
   userController.register,
   authController.login
