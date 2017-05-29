@@ -41,4 +41,6 @@ router.post('/register',
 
 router.get('/logout', authController.logout)
 
+router.get('/account', userController.account)
+
 module.exports = router
