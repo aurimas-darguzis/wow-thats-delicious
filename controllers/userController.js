@@ -49,7 +49,7 @@ exports.account = (req, res) => {
 exports.updateAccount = async (req, res) => {
   const updates = {
     name: req.body.name,
-    email:req.body.email
+    email: req.body.email
   }
 
   const query = {
