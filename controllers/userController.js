@@ -51,4 +51,22 @@ exports.updateAccount = async (req, res) => {
     name: req.body.name,
     email:req.body.email
   }
+
+  const query = {
+    _id: req.user._id
+  }
+
+  const update = {
+    $set: updates
+  }
+
+  const options = {
+    new: true,
+    runValidators: true,
+    context: 'query'
+  }
+  const user = await User.findOneAndUpdate(query, update, options)
+
+  req.flash('success', 'Updated the profile!')
+  res.redirect('back')
 }
