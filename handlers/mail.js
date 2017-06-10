@@ -13,11 +13,15 @@ const transport = nodemailer.createTransport({
   }
 });
 
-transport.sendMail({
-  from:'Aurimas D <aurimasdarguzis@gmail.com',
-  to: 'romka@example.com',
-  subject: 'just trying things out',
-  html: 'Hey I <strong>made it</strong>',
-  text: 'Hey I **made it**'
-});
+exports.send = async (options) => {
+  const mailOptions = {
+    from: `Me name <noreply@name.com>`,
+    to: options.user.email,
+    subject: options.subject,
+    html: 'This will be filled in later',
+    text: 'This will also be filled in later'
+  }
 
+  const sendMail = promisify(transport.sendMail, transport)
+  return sendMail(mailOptions)
+}
