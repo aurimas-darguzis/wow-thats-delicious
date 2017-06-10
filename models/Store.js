@@ -37,7 +37,12 @@ const storeSchema = new mongoose.Schema({
       required: 'You must suplly an address!'
     }
   },
-  photo: String
+  photo: String,
+  author: {
+    type: mongoose.Schema.ObjectId,
+    ref: 'User',
+    required: 'You must suplly an author'
+  }
 })
 
 // before we save schema, we want to prepopulate slug.
