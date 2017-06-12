@@ -127,7 +127,21 @@ exports.searchStores = async (req, res) => {
 }
 
 exports.mapStores = async (req, res) => {
-  
+  const coordinates = [req.query.lng, req.query.lat].map(parseFloat)
+  const q = {
+    location: {
+      $near: {
+        $geometry: {
+          type: 'Point',
+          coordinates
+        },
+        $maxDistance: 10000 // 10km
+      }
+    }
+  }
+
+  const stores = await Store.find(q);
+  res.json(stores);
 }
 // exports.deleteStore = async (req, res) => {
 //   const store = await Store.findOneAndRemove({ _id: req.params.id })
