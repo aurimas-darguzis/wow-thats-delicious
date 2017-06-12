@@ -126,6 +126,9 @@ exports.searchStores = async (req, res) => {
   res.json(stores);
 }
 
+exports.mapStores = async (req, res) => {
+  
+}
 // exports.deleteStore = async (req, res) => {
 //   const store = await Store.findOneAndRemove({ _id: req.params.id })
 // }

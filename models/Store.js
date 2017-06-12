@@ -51,6 +51,8 @@ storeSchema.index({
   description: 'text'
 })
 
+storeSchema.index({ location: '2dsphere' })
+
 
 // before we save schema, we want to prepopulate slug.
 // so we take the value from name, pass it slug function that
