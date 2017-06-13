@@ -111,9 +111,9 @@ exports.searchStores = async (req, res) => {
   const stores = await Store
   // first find stores that match
   .find({
-     $text: {
-       $search: req.query.q
-     }
+    $text: {
+      $search: req.query.q
+    }
   }, {
     score: { $meta: 'textScore' }
   })
@@ -122,8 +122,8 @@ exports.searchStores = async (req, res) => {
     score: { $meta: 'textScore' }
   })
   // limit to only 5 results
-  .limit(5);
-  res.json(stores);
+  .limit(5)
+  res.json(stores)
 }
 
 exports.mapStores = async (req, res) => {
@@ -140,12 +140,12 @@ exports.mapStores = async (req, res) => {
     }
   }
 
-  const stores = await Store.find(q).select('slug name description location').limit(10);
-  res.json(stores);
+  const stores = await Store.find(q).select('slug name description location photo').limit(10)
+  res.json(stores)
 }
 
 exports.mapPage = (req, res) => {
-  res.render('map', { title: 'Map' });
+  res.render('map', { title: 'Map' })
 }
 
 // exports.deleteStore = async (req, res) => {

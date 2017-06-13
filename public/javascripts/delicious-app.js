@@ -7,6 +7,6 @@ import makeMap from './modules/map'
 
 autocomplete($('#address'), $('#lat'), $('#lng'))
 
-typeAhead( $('.search') )
+typeAhead($('.search'))
 
-makeMap( $('#map') )
+makeMap($('#map'))
