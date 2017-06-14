@@ -13,3 +13,4 @@ typeAhead($('.search'))
 makeMap($('#map'))
 
 $$('form.heart').on('submit', ajaxHeart)
+
