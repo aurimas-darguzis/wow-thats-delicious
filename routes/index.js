@@ -51,6 +51,7 @@ router.post('/account/reset/:token',
 )
 
 router.get('/map', storeController.mapPage)
+router.get('/hearts', catchErrors(storeController.getHearts))
 
 /* API */
 router.get('/api/search', catchErrors(storeController.searchStores))
