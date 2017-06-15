@@ -3,6 +3,7 @@ const router = express.Router()
 const storeController = require('../controllers/storeController')
 const userController = require('../controllers/userController')
 const authController = require('../controllers/userController')
+const reviewController = require('../controllers/reviewController')
 const { catchErrors } = require('../handlers/errorHandlers')
 
 router.get('/', catchErrors(storeController.getStores))
