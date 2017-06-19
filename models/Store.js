@@ -94,12 +94,16 @@ storeSchema.statics.getTopStores = function () {
     { $match: { 'reviews.1': { $exists: true } }},
     // Add the average reviews field
     { $project: {
+      photo: '$$ROOT.photo',
+      name: '$$ROOT.name',
+      reviews: '$$ROOT.reviews',
+      slug: '$$ROOT.slug',
       averageRating: { $avg: '$reviews.rating' }
-    }}
+    } },
     // sort it by our new field, highest reviews first
-
+    { $sort: { averageRating: -1 }},
     // limit to at most 10
-
+    { $limit: 10 }
   ])
 }
 
