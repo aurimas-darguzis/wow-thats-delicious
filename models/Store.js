@@ -91,9 +91,11 @@ storeSchema.statics.getTopStores = function () {
     // Lookup Stores and populate their reviews
     { $lookup:{ from: 'reviews', localField: '_id', foreignField: 'store', as: 'reviews' }},
     // filter for only items that have 2 or more reviews
-    { $match: { 'reviews.1': { $exists: true } }}
+    { $match: { 'reviews.1': { $exists: true } }},
     // Add the average reviews field
-
+    { $project: {
+      averageRating: { $avg: '$reviews.rating' }
+    }}
     // sort it by our new field, highest reviews first
 
     // limit to at most 10
