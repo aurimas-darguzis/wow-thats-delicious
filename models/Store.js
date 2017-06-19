@@ -89,9 +89,9 @@ storeSchema.statics.getTagsList = function () {
 storeSchema.statics.getTopStores = function () {
   return this.aggregate([
     // Lookup Stores and populate their reviews
-    { $lookup:{ from: 'reviews', localField: '_id', foreignField: 'store', as: 'reviews' }}
+    { $lookup:{ from: 'reviews', localField: '_id', foreignField: 'store', as: 'reviews' }},
     // filter for only items that have 2 or more reviews
-
+    { $match: { 'reviews.1': { $exists: true } }}
     // Add the average reviews field
 
     // sort it by our new field, highest reviews first
